@@ -1,0 +1,50 @@
+- Class: meta
+  Course: Test course
+  Lesson: Test lesson
+  Author: your name goes here
+  Type: Standard
+  Organization: your organization's name goes here
+  Version: 2.4.5
+
+- Class: text
+  Output: Hi there! I'm just trying out swirl, let's see how it works
+
+- Class: cmd_question
+  Output: Can you tell R to sum a vector containing the first 10 natural numbers?
+  CorrectAnswer: sum(1:10)
+  AnswerTests: any_of_exprs('sum(1:10)', 'sum(c(1, 2, 3, 4, 5, 6 ,7, 8, 9, 10))', 'sum(seq(1, 10, 1))')
+  Hint: Use sum(). Remember that you can create a vector with the operator `:`
+
+- Class: mult_question
+  Output: What programming language are you using at the moment?
+  AnswerChoices: R;Python;C++
+  CorrectAnswer: R
+  AnswerTests: omnitest(correctVal= 'R')
+  Hint: Just one letter!
+
+- Class: figure
+  Output: Let's look at a simple plot
+  Figure: Simple_plot.R
+  FigureType: new
+
+- Class: video
+  Output: Would you like to watch a short video about feminism for everyone?
+  VideoLink: https://www.ted.com/talks/chimamanda_ngozi_adichie_we_should_all_be_feminists
+
+- Class: exact_question
+  Output: Why?
+  CorrectAnswer: 42
+  AnswerTests: omnitest(correctVal=42)
+  Hint: Don't Panic!
+
+- Class: text_question
+  Output: Tortilla, with or without onion?
+  CorrectAnswer: without
+  AnswerTests: omnitest(correctVal='without')
+  Hint: Oh, come on!
+
+- Class: script
+  Output: Create a data frame where the first column is called num and contains all numbers from 1 to 26 and the second column is all the letters in the English alphabet. Then sum all the elements in num
+  AnswerTests: omnitest(correctVal=351)
+  Hint: Remember the predefined vector LETTERS!
+  Script: table.R
